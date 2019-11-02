@@ -4,3 +4,4 @@ dist/
 *.egg-info
 *.tgz
 *.tar.gz
+webapp-env/

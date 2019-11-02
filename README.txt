@@ -16,16 +16,6 @@ To install a helm chart:
   ## upload helm chart...
   helm install webapp-0.1.0.tgz
 
-The secret is independent and should be shovelled in separately via 
-a yaml file like:
-
-	apiVersion: v1
-	kind: Secret
-	metadata:
-		name: my-test-secret
-	type: Opaque
-	data:
-		TEST-SECRET: dGhpc19pc19hX3NlY3JldAo=
 
 Create a service for Redis
 kind: Service

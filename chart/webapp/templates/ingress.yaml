@@ -1,12 +1,12 @@
 {{- if .Values.ingress.enabled -}}
-{{- $fullName := include "simpleweb.fullname" . -}}
+{{- $fullName := include "webapp.fullname" . -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
   labels:
-    app.kubernetes.io/name: {{ include "simpleweb.name" . }}
-    helm.sh/chart: {{ include "simpleweb.chart" . }}
+    app.kubernetes.io/name: {{ include "webapp.name" . }}
+    helm.sh/chart: {{ include "webapp.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
   {{- with .Values.ingress.annotations }}

@@ -12,7 +12,7 @@ from configparser import ConfigParser
 
 
 def get_version():
-    version = '0.5.0-default'
+    version = '0.1.0-default'
     if path.exists('app.ini'):
         config = ConfigParser()
         config.read('app.ini')
@@ -21,7 +21,7 @@ def get_version():
 
 
 setup(
-    name='simpleweb',
+    name='webapp',
     version=get_version(),
     description='A simple Python web project',
     author='Marc McKernan',

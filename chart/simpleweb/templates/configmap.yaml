@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sw-configmap
+data:
+  redis-host: "redis"
+  config-value: "cfg-1"

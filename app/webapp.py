@@ -31,36 +31,14 @@ vals = gen()
 
 app_version="0.1.1"
 count = 0
-cert_file = os.getenv('CERTFILE')
-key_file = os.getenv('KEYFILE')
-secret_file = os.getenv('SECRET')
 redis_host = os.getenv('REDIS_HOST')
 config_val = os.getenv('CONFIG_VAL')
-
-context = None
-
-if cert_file is not None and key_file is not None:
-    if os.path.isfile(cert_file) and os.path.isfile(key_file):
-        context = (cert_file, key_file)
 
 
 @appcontainer.route("/")
 def home():
     response = make_response(render_template('home.html', value='my_test_value'))
     return response
-
-
-@appcontainer.route("/secret")
-def secret():
-    if secret_file is None:
-        print('no SECRET environment variable provided, leaving...')
-        return Response(app_version + ':no secret environment variable', status=200, mimetype='text')
-    if not os.path.isfile(secret_file):
-        print(app_version + ':secret file ' + secret_file + ' does not appear to exist.')
-        return Response(app_version + ':' + secret_file + ' does not exist...', status=200)
-    secret_fd = open(secret_file, 'r')
-    secret_data = secret_fd.read()
-    return Response(secret_data, status=200, mimetype='text')
 
 
 @appcontainer.route("/record")
@@ -132,11 +110,7 @@ def configfile():
 
 def start():
     print('version: ' + app_version)
-    if context is None:
-        print('no ssl defined...')
-    else:
-        print('trying to use ssl...')
-    appcontainer.run(host="0.0.0.0", port=5000, debug=False, ssl_context=context)
+    appcontainer.run(host="0.0.0.0", port=5000, debug=False)
 
 
 if __name__ == '__main__':

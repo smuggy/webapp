@@ -14,7 +14,7 @@ The commands to setup helm within the cluster:
 To install a helm chart:
 
   ## upload helm chart...
-  helm install simpleweb-0.1.0.tgz
+  helm install webapp-0.1.0.tgz
 
 The secret is independent and should be shovelled in separately via 
 a yaml file like:

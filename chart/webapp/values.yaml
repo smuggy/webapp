@@ -6,7 +6,7 @@ replicaCount: 1
 
 image:
   repository: mmckernan/webapp
-  tag: 21
+  tag: 1
   pullPolicy: IfNotPresent
 
 initImage:

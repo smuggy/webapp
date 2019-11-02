@@ -1,3 +1,18 @@
+# Sample web application
+
+This application provides a variety of endpoints:
+
+|endpoint|description|
+|---|---|
+|/|static web page|
+|/call|calls another rest service and responds with that data|
+|/config|returns value from configmap|
+|/configfile|reads out of /config directory for file.yaml|
+|/health|health check, fails occasionally|
+|/record|returns internally generated number|
+|/slowresp|slow responding call|
+|/value|makes redis call to get a value from redis|
+
 GCP Setup necessary:
   gcloud container clusters get-credentials standard-cluster-1 --zone us-central1-a --project qs-todolist-232620
 

@@ -5,3 +5,4 @@ dist/
 *.tgz
 *.tar.gz
 webapp-env/
+build/
